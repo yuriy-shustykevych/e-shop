@@ -83,6 +83,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/collections') }}">All Categories</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/omdbapi') }}">OMDb API</a>
+                    </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link" href="{{ url('/new-arrivals') }}">New Arrivals</a>--}}
 {{--                    </li>--}}

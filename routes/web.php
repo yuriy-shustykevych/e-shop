@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
 Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
 Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
 Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
@@ -63,3 +63,14 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function (){
     });
 
 });
+
+Route::controller(App\Http\Controllers\OmdbapiController::class)->group(function (){
+    Route::get('/omdbapi', 'index');
+    Route::post('/omdbapi','index');
+    Route::post('/omdbapi/{pageNumber}','searchMovie');
+    Route::get('/omdbapi/{movieId}','movieDetails');
+    Route::post('/email-route/{movieId}', 'emailSend');
+    Route::get('/movie-pdf-data', 'pdfFile');
+});
+
+

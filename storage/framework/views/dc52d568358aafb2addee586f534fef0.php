@@ -100,6 +100,9 @@ if (isset($__slots)) unset($__slots);
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(url('/collections')); ?>">All Categories</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo e(url('/omdbapi')); ?>">OMDb API</a>
+                    </li>
 
 
 
